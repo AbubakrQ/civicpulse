@@ -34,7 +34,7 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Port 8080, not 80: a non-root process cannot bind a privileged port.
 RUN sed -i 's|^user .*|# user directive removed: the container runs as civic|' /etc/nginx/nginx.conf \
- && sed -i 's|/var/run/nginx.pid|/tmp/nginx.pid|' /etc/nginx/nginx.conf \
+ && sed -i 's|^pid .*|pid /tmp/nginx.pid;|' /etc/nginx/nginx.conf \
  && chmod +x /usr/local/bin/docker-entrypoint.sh \
  && mkdir -p /var/cache/nginx /tmp \
  && chown -R civic:civic /var/cache/nginx /usr/share/nginx/html /etc/nginx/conf.d
