@@ -35,7 +35,7 @@ TRIAGE_LATENCY = Histogram(
 )
 
 TRIAGE_FALLBACKS = Counter(
-    "civicpulse_triage_fallback_total",
+    "civicpulse_triage_fallbacks_total",
     "Triage calls that fell back to the rule engine, by error class.",
     ("provider", "error"),
     registry=REGISTRY,
