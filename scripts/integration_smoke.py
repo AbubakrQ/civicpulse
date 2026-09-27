@@ -265,7 +265,7 @@ def main() -> int:
     for metric in (
         "civicpulse_http_requests_total",
         "civicpulse_http_request_duration_seconds",
-        "civicpulse_triage_latency_seconds",
+        "civicpulse_triage_duration_seconds",
         "civicpulse_triage_fallbacks_total",
     ):
         if metric not in text:
